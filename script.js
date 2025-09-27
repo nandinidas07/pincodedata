@@ -35,7 +35,7 @@ async function lookupPincode() {
     postOffices = payload.PostOffice;
     filterInput.disabled = false;
     filterInput.value = "";
-    statusDiv.innerHTML = Showing ${postOffices.length} post offices;
+    statusDiv.innerHTML = Pincode: <b>${pin}</b><br>Message: ${payload.Message};
     renderResults();
   } catch (err) {
     statusDiv.innerHTML = "<div class='error'>Couldn't fetch postal data you're looking for...</div>";
@@ -59,11 +59,11 @@ function renderResults() {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <h3>${po.Name}</h3>
+      <p><strong>Name:</strong> ${po.Name}</p>
       <p><strong>Branch Type:</strong> ${po.BranchType}</p>
-      <p><strong>Pincode:</strong> ${po.Pincode}</p>
+      <p><strong>Delivery Status:</strong> ${po.DeliveryStatus}</p>
       <p><strong>District:</strong> ${po.District}</p>
-      <p><strong>State:</strong> ${po.State}</p>
+      <p><strong>Division:</strong> ${po.Division}</p>
     `;
     resultsDiv.appendChild(card);
   });
