@@ -53,3 +53,16 @@ button:hover { background: #0369a1; }
 .card h3 { margin: 0; }
 
 .filter-box { margin-top: 15px; }
+.results {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: #f9fafb;
+}
